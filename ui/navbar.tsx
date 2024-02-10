@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 
+const links = [
+  { name: "Home", href: "/" },
+  { name: "Account", href: "/overview" },
+];
+
 export default function Navbar() {
   const [isNavOpen, setNavOpen] = useState(false);
   const toggleNav = () => setNavOpen(!isNavOpen);
@@ -15,7 +20,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <a
             className="flex-none text-xl font-semibold text-white focus:outline-none focus:ring-1 focus:ring-gray-600"
-            href="#"
+            href="/"
             aria-label="Brand"
           >
             PuzzLink
@@ -37,6 +42,9 @@ export default function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <line x1="3" x2="21" y1="6" y2="6" />
                 <line x1="3" x2="21" y1="12" y2="12" />
@@ -50,6 +58,9 @@ export default function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="M18 6 6 18" />
                 <path d="m6 6 12 12" />
@@ -64,31 +75,18 @@ export default function Navbar() {
           } overflow-hidden transition-all duration-600 basis-full grow sm:block`}
         >
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-            <a
-              className="font-medium text-white hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-600"
-              href=""
-              aria-current="page"
-            >
-              Home
-            </a>
-            <a
-              className="font-medium text-white hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-600"
-              href="#"
-            >
-              Account
-            </a>
-            <a
-              className="font-medium text-white hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-600"
-              href="#"
-            >
-              Work
-            </a>
-            <a
-              className="font-medium text-white hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-600"
-              href="#"
-            >
-              Blog
-            </a>
+            {links.map((link, idx) => {
+              return (
+                <a
+                  key={idx}
+                  className="font-medium text-white hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-600"
+                  href={link.href}
+                  aria-current="page"
+                >
+                  {link.name}
+                </a>
+              );
+            })}
           </div>
         </div>
       </nav>

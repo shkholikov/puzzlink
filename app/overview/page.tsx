@@ -4,13 +4,19 @@ import { icons } from "@/lib/icons";
 const links = [
   { type: "Instagram", href: "" },
   { type: "Telegram", href: "" },
-  { type: "Instagram", href: "" },
-  { type: "Telegram", href: "" },
+  { type: "Github", href: "" },
+  { type: "Linkedin", href: "" },
+  { type: "Facebook", href: "" },
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center overflow-auto">
+      <img
+        className="rounded-xl h-36 w-36 mx-auto"
+        src="/avatar.png"
+        alt="Image Description"
+      ></img>
       <h1 className="text-white text-3xl mt-5">Helloouu 👋🏻</h1>
       <p className="text-white m-2.5">Your custom text here 💭</p>
       {links.map((link, key) => {
