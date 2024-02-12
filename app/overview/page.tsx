@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { icons } from "@/lib/icons";
+import { icons } from "@/app/lib/icons";
 
 const links = [
   { type: "Instagram", href: "" },

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/ui/navbar";
-import Footer from "@/ui/footer";
+import Navbar from "@/app/ui/navbar";
+import Footer from "@/app/ui/footer";
 
 const font = Montserrat({
   weight: "400",
