@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <a
             className="flex-none text-xl font-semibold text-white focus:outline-none focus:ring-1 focus:ring-gray-600"
-            href="/public"
+            href="/"
             aria-label="Brand"
           >
             PuzzLink

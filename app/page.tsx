@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import { getUser } from "@/app/lib/fetch";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -8,8 +7,6 @@ const inter = Inter({
 });
 
 export default async function Home() {
-  const user = await getUser("example@puzzlink.io");
-  console.log(user);
   return (
     <main id="content" role="main">
       <div className="text-center py-10 px-4 sm:px-6 lg:px-8">

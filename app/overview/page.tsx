@@ -1,15 +1,11 @@
 import Link from "next/link";
 import { icons } from "@/app/lib/icons";
+import { getUser } from "@/app/lib/fetch";
 
-const links = [
-  { type: "Instagram", href: "" },
-  { type: "Telegram", href: "" },
-  { type: "Github", href: "" },
-  { type: "Linkedin", href: "" },
-  { type: "Facebook", href: "" },
-];
+export default async function Home() {
+  const user = await getUser("example@puzzlink.io");
+  const { links } = user;
 
-export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center overflow-auto">
       <img
@@ -26,7 +22,7 @@ export default function Home() {
               key={key}
               href={link.href}
               target="_blank"
-              className="flex flex-row w-5/6 sm:w-3/6 p-3 mb-5 justify-center items-center rounded-lg text-white bg-gradient-to-br from-purple-600 to-blue-500 transition duration-300 ease-in-out hover:from-purple-500 hover:to-blue-400"
+              className="flex flex-row w-5/6 sm:w-3/6 p-3 mb-5 justify-center items-center rounded-lg text-white bg-gradient-to-br from-purple-600 to-blue-500 transition duration-300 ease-in-out hover:from-purple-500 hover:to-blue-400 hover:shadow-md hover:shadow-blue-500/50 "
             >
               <div className="mx-1">
                 {icons[link.type as keyof typeof icons]}

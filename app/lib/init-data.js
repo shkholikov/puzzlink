@@ -5,11 +5,11 @@ const puzzlinkUsers = [
     email: "example@puzzlink.io",
     password: "123456",
     links: [
-      { type: "Instagram", href: "" },
-      { type: "Telegram", href: "" },
-      { type: "Github", href: "" },
-      { type: "Linkedin", href: "" },
-      { type: "Facebook", href: "" },
+      { type: "Instagram", href: "https://www.instagram.com/sh.kholikov" },
+      { type: "Telegram", href: "https://t.me/shkholikov" },
+      { type: "Github", href: "https://github.com/shkholikov" },
+      { type: "Linkedin", href: "https://www.linkedin.com/in/shkholikov" },
+      { type: "Facebook", href: "https://www.facebook.com/kholikovsh" },
     ],
   },
 ];

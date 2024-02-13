@@ -21,7 +21,6 @@ async function seedPuzzlinkUsers(client) {
       puzzlinkUsers.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);
         const links = JSON.stringify(user.links);
-        console.log(links);
         return client.sql`
                 INSERT INTO puzzlinkUsers (id, name, email, password, links)
                 VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword}, ${links})
