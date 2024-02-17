@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Account", href: "/overview" },
+  { name: "Account", href: "/account" },
 ];
 
 export default function Navbar() {

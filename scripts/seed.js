@@ -5,6 +5,7 @@ const { db } = require("@vercel/postgres");
 async function seedPuzzlinkUsers(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    await client.sql`CEARTE externerennn`;
     const createTable = await client.sql`
         CREATE TABLE IF NOT EXISTS puzzlinkUsers (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
