@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { icons } from "@/app/lib/icons";
-import { getUser } from "@/app/lib/fetch";
+import { getLinks, getUser } from "@/app/lib/fetch";
 import { notFound } from "next/navigation";
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const user = await getUser("example@puzzslink.io");
+  const user = await getUser("example@puzzlink.io");
+  const userLinkItem = await getLinks(user.id);
 
   if (params.id === "oops") {
     notFound();
   }
-
-  const { links } = user;
 
   return (
     <div className="flex flex-col justify-center items-center overflow-auto">
@@ -21,7 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       ></img>
       <h1 className="text-white text-3xl mt-5">Helloouu 👋🏻</h1>
       <p className="text-white m-2.5">Your custom text here 💭</p>
-      {links.map((link, key) => {
+      {userLinkItem.links.map((link, key) => {
         return (
           <>
             <Link
